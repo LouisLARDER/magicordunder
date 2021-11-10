@@ -5,12 +5,17 @@ class Todo:
 
     def add(self, item): 
         self.items.append(item)
-
+    # referenced programmer
     def __repr__(self):
         return f"{__class__.__name__}('{self.name}')"
-
+     #ref by user
     def __str__(self):
        return self.name 
     
     def __len__(self):
-        pass
+        return len(self.items)
+    
+    def __gt__(self, other):
+        return len(self.items) > len(other.items)
+    def __lt__(self, other):
+        return len(self.items) < len(other.items)
